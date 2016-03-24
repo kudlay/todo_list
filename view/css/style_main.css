@@ -1,0 +1,141 @@
+﻿@-moz-document url-prefix() {
+    textarea {
+        height: 1em;
+    }
+}
+.panel{
+    margin-bottom: 50px;
+}
+.project_name{
+    height: 40px;
+    background-color: cornflowerblue;
+    border:none;
+    box-shadow:none;
+    font-size:22px;
+    color:white;
+    text-shadow: 1px 1px 0 #111;
+}
+.task_name[disabled], .project_name[disabled]{
+    background-color:transparent;
+    cursor:default;
+}
+.task_name{
+    background-color: #F9FBBD;
+    border:none;
+    box-shadow:none;
+    font-weight: bold;
+    font-size:14px;
+    color:#777;
+}
+.icon {
+    padding: 4px;
+    background-color:transparent;
+    border:none;
+}
+.project_control{
+    width: 71px;
+}
+
+.project_control span{
+    visibility:hidden;
+}
+.project_control:hover span{
+    visibility:visible;
+}
+.control img, input[type='checkbox']{
+    cursor:pointer;
+}
+.panel-heading {
+    background: #4e7fbc url(../image/project_header.png) repeat-x 0 0;
+    padding: 5px 5px 5px 10px;
+    border: 1px solid #315589;
+}
+.plus{
+    padding:0 12px;
+}
+.add_task{
+    height: 50px;
+    padding: 8px 15px 0 2px;
+    background: #e1e1e1 url(../image/add_task.png) repeat-x 0 0;
+    border: solid #abafa3;
+    border-width: 0 1px 1px;
+}
+.add_task_btn{
+    border: 1px solid #447557;
+    background: url(../image/add_task_btn.png) repeat-x 0 0;
+}
+.add_task_name{
+    border-left-color: #999;
+    border-top-color: #999;
+    border-bottom-color: #bbb;
+}
+.project_control span:after{
+    content:"|";
+    font-size: 18px;
+    padding: 0 0 0 10px;
+    color:#4e7fbc;
+}
+
+.task_control span::after{
+    border-color: #cd0a0a;
+}
+.task_control .project_control span::after {
+    font-size: 15px;
+    color: #d3d3d3;
+}
+.project_control span:last-child:after{
+    content:"";
+    padding: 0 0;
+}
+table{
+    font-size: 14px;
+    margin-bottom: 20px;
+    width: 100%;
+    -webkit-border-radius: 0 0 10px 10px;
+    -moz-border-radius: 0 0 10px 10px;
+    -khtml-border-radius: 0 0 10px 10px;
+    border-radius: 0 0 10px 10px;
+    overflow: hidden;
+}
+.space{
+    border-right: 1px solid #EFDADF;
+    border-left: 1px solid #EFDADF;
+    width: 5px;
+}
+.task_status{
+    width: 50px;
+    text-align: center;
+}
+.task_control{
+    width: 96px;
+    text-align: center;
+    border-left: 1px solid #E7EBEA;
+}
+tr{
+    background-color: white;
+    border-top: 1px solid #E7EBEA;
+}
+tr:hover{
+    background-color: #FCFFD6;
+}
+.checked{
+    text-decoration: line-through;
+    font-style: italic;
+}
+.btn.disabled, .btn[disabled], fieldset[disabled] .btn{
+    cursor: default;
+}
+#add_project{
+    background: #4e7fbc url(../image/add_project.png) repeat-x 0 0;
+    font-weight: bold;
+}
+.task-move img{
+    cursor: move;!important;
+}
+textarea{
+    resize: none;
+}
+button, button:active, button:focus, button:hover, a, a:active, a:focus, a:hover {
+    outline: none !important;
+}
+

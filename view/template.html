@@ -1,0 +1,65 @@
+<script id="template" type="text/html">
+        {{#projects}}
+            <div class="panel-heading">
+                <div class="input-group">
+                    <span class="input-group-addon icon"><img src="view/image/icon_project.png"></span>
+                    <input type="text" class="form-control project_name" id="project_{{id}}" onblur="Lost_focus(this);" onchange="Change_name(this, {{id}}, 'rename_project');" onkeypress="Press_enter(event.keyCode, this)" onkeydown="Press_enter(event.keyCode, this)" value="{{name}}" disabled>
+                    <span class="input-group-addon icon project_control">
+                        <span class="input-group-addon icon control project-edit" ><img src="view/image/project-edit.png" onclick="project_edit(this)"></span>
+                        <span class="input-group-addon icon control project-delete" ><img src="view/image/project-delete.png" onclick="project_delete({{id}})"></span>
+                    </span>
+                </div>
+            </div>
+            <div class=" add_task">
+                <div class="input-group">
+                    <span class="input-group-addon icon plus">
+                        <img src="view/image/plus.png">
+                    </span>
+                    <input type="text" onkeyup="Validation_task(this);" class="form-control add_task_name" placeholder="Start typing here to create a task...">
+                    <span class="input-group-btn">
+                        <button class="btn btn-success add_task_btn" type="button" onclick="Add_task(this, {{id}});" disabled>Add task</button>
+                    </span>
+                </div>
+            </div>
+            <table>
+                <tbody class="task_list">
+                {{#tasks}}
+                <tr id="{{id}}">
+                    <td class="task_status">
+                        <input type="checkbox" {{Status_task}} onchange="Edit_status(this, {{id}});">
+                    </td>
+                    <td class="space">
+                    </td>
+                    <td class = "task_name_td">
+                        <textarea class="form-control task_name {{Status_task}}" onblur="Lost_focus(this);" onchange="Change_name(this, {{id}}, 'rename_task');" disabled rows="1" onkeypress="return Press_enter(event.keyCode, this)" onkeydown="return Press_enter(event.keyCode, this)">{{name}}</textarea>
+                    </td>
+                    <td class="task_control">
+                        <span class="input-group-addon icon project_control">
+                            <span class="input-group-addon icon control task-move" ><img src="view/image/task_move.png" onclick=""></span>
+                            <span class="input-group-addon icon control task-edit" ><img src="view/image/task_edit.png" onclick="Task_edit(this);"></span>
+                            <span class="input-group-addon icon control task-del" ><img src="view/image/task_delete.png" onclick="Task_del({{id}});"></span>
+                        </span>
+                    </td>
+                </tr>
+                {{/tasks}}
+                </tbody>
+            </table>
+        {{/projects}}
+    </div>
+</script>
+<script id="template_add_project" type="text/html">
+    {{#projects}}
+    <div class="panel panel-primary delete_after">
+        <div class="panel-heading">
+            <div class="input-group">
+                <span class="input-group-addon icon"><img src="view/image/icon_project.png"></span>
+                <input type="text" class="form-control project_name project_name_add" value=""  onblur="Save_add_project(value);" onkeypress="Press_enter(event.keyCode, this)" onkeydown="Press_enter(event.keyCode, this)">
+                <span class="input-group-addon icon project_control">
+
+                </span>
+            </div>
+        </div>
+    </div>
+    {{/projects}}
+    </div>
+</script>
